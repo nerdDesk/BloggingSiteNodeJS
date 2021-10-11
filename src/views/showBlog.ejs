@@ -4,8 +4,9 @@
 <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Blogging Site</a>
-    <div class="mx-2" style="display: inline-block"></div>
-    <button type="button" class="like btn btn-outline-primary">Like</button>
+    <button id="likeButton" type="button" class="btn btn-outline-primary">
+      Like
+    </button>
   </div>
 </nav>
 
@@ -37,5 +38,19 @@
     </div>
   </div>
 </div>
+
+<script>
+  // Like button
+  let button = document.getElementById("likeButton");
+  button.addEventListener("click", () => {
+    if (button.innerText === "Like") {
+      button.classList.replace("btn-outline-primary", "btn-primary");
+      button.innerText = "Liked";
+    } else {
+      button.classList.replace("btn-primary", "btn-outline-primary");
+      button.innerText = "Like";
+    }
+  });
+</script>
 
 <%- include ("partials/footer")%>
