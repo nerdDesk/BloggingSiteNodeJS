@@ -1,65 +1,39 @@
 <%- include ("partials/header")%>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Blogging Site</a>
-  </div>
-</nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Blogging Site</a>
+    </div>
+  </nav>
 
-<!-- Update a blog -->
-<div class="container my-4 border shadow-sm rounded">
-  <form method="POST" action="/edit/<%=blog._id%>?_method=PUT">
-    <div class="mb-3">
-      <label for="title" class="form-label"> Title </label>
-      <input
-        type="text"
-        class="form-control"
-        name="title"
-        placeholder="My blog title"
-        required
-        value="<%=blog.title%>"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="categories" class="form-label"> Category </label>
-      <input
-        type="text"
-        class="form-control"
-        name="categories"
-        placeholder="Eg: Science"
-        required
-        value="<%=blog.categories%>"
-      />
-    </div>
-    <div class="mb-3">
-      <label for="content" class="form-label"> Content </label>
-      <textarea
-        class="form-control"
-        name="content"
-        rows="3"
-        placeholder="This is the body of my blog"
-        required
-      ><%=blog.content%></textarea
-      >
-    </div>
-    <div class="mb-3">
-      <button
-        type="submit"
-        onclick="return confirm('Blog updated?')"
-        class="btn btn-success"
-      >
-        Update
-      </button>
-      <button
-        type="reset"
-        onclick="return confirm('Reset changes?')"
-        class="btn btn-outline-danger"
-      >
-        Clear
-      </button>
-    </div>
-  </form>
-</div>
+  <!-- Update a blog -->
+  <div class="container my-4 border shadow-sm rounded">
+    <form method="POST" action="/edit/<%=blog._id%>?_method=PUT">
+      <div class="mb-3">
+        <label for="title" class="form-label"> Title </label>
+        <input type="text" class="form-control" name="title" placeholder="My blog title" required
+          value="<%=blog.title%>" />
+      </div>
+      <div class="mb-3">
+        <label for="categories" class="form-label"> Category </label>
+        <input type="text" class="form-control" name="categories" placeholder="Eg: Science" required
+          value="<%=blog.categories%>" />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label"> Content </label>
+        <textarea class="form-control" name="content" rows="3" placeholder="This is the body of my blog"
+          required><%=blog.content%></textarea>
+      </div>
+      <div class="mb-3">
+        <button type="submit" onclick="return confirm('Blog updated?')" class="btn btn-success">
+          Update
+        </button>
+        <button type="reset" onclick="return confirm('Reset changes?')" class="btn btn-outline-danger">
+          Clear
+        </button>
+      </div>
+    </form>
+  </div>
 
 <%- include ("partials/footer")%>

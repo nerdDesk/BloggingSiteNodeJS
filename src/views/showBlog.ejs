@@ -1,56 +1,57 @@
 <%- include ("partials/header")%>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Blogging Site</a>
-    <button id="likeButton" type="button" class="btn btn-outline-primary">
-      Like
-    </button>
-  </div>
-</nav>
-
-<!-- Show the blog -->
-<div
-  class="blog-post container my-4 border shadow-sm p-3 mb-5 bg-white rounded"
->
-  <h2 class="blog-post-title"><%=blog.title%></h2>
-  <p class="blog-post-meta"><%=blog.categories%></p>
-  <hr />
-  <p><%=blog.content%></p>
-
-  <div class="row">
-    <div class="col-md-1">
-      <form action="/edit/<%=blog._id%>" class="d-flex">
-        <button class="btn btn-outline-warning">Edit</button>
-      </form>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Blogging Site</a>
+      <button id="likeButton" type="button" class="btn btn-outline-primary">
+        Like
+      </button>
     </div>
-    <div class="col-md-1">
-      <form method="POST" action="/<%=blog._id%>?_method=DELETE" class="d-flex">
-        <button
-          class="btn btn-outline-danger"
-          onclick="return confirm('Do you want to delete <%=blog.title%>?')"
-          type="submit"
-        >
-          Delete
-        </button>
-      </form>
+  </nav>
+
+  <!-- Show the blog -->
+  <div class="blog-post container my-4 border shadow-sm p-3 mb-5 bg-white rounded">
+    <h2 class="blog-post-title">
+      <%=blog.title%>
+    </h2>
+    <p class="blog-post-meta">
+      <%=blog.categories%>
+    </p>
+    <hr />
+    <p>
+      <%=blog.content%>
+    </p>
+
+    <div class="row">
+      <div class="col-md-1">
+        <form action="/edit/<%=blog._id%>" class="d-flex">
+          <button class="btn btn-outline-warning">Edit</button>
+        </form>
+      </div>
+      <div class="col-md-1">
+        <form method="POST" action="/<%=blog._id%>?_method=DELETE" class="d-flex">
+          <button class="btn btn-outline-danger" onclick="return confirm('Do you want to delete <%=blog.title%>?')"
+            type="submit">
+            Delete
+          </button>
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-<script>
-  // Like button
-  let button = document.getElementById("likeButton");
-  button.addEventListener("click", () => {
-    if (button.innerText === "Like") {
-      button.classList.replace("btn-outline-primary", "btn-primary");
-      button.innerText = "Liked";
-    } else {
-      button.classList.replace("btn-primary", "btn-outline-primary");
-      button.innerText = "Like";
-    }
-  });
-</script>
+  <script>
+    // Like button
+    let button = document.getElementById("likeButton");
+    button.addEventListener("click", () => {
+      if (button.innerText === "Like") {
+        button.classList.replace("btn-outline-primary", "btn-primary");
+        button.innerText = "Liked";
+      } else {
+        button.classList.replace("btn-primary", "btn-outline-primary");
+        button.innerText = "Like";
+      }
+    });
+  </script>
 
 <%- include ("partials/footer")%>

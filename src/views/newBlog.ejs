@@ -1,62 +1,37 @@
 <%- include ("partials/header")%>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Blogging Site</a>
-  </div>
-</nav>
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-sm sticky-top navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Blogging Site</a>
+    </div>
+  </nav>
 
-<!-- Create a new blog -->
-<div class="container my-4 border shadow-sm rounded">
-  <form action="/new" method="POST">
-    <div class="mb-3">
-      <label for="title" class="form-label"> Title </label>
-      <input
-        type="text"
-        class="form-control"
-        name="title"
-        placeholder="My blog title"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="categories" class="form-label"> Category </label>
-      <input
-        type="text"
-        class="form-control"
-        name="categories"
-        placeholder="Eg: Science"
-        required
-      />
-    </div>
-    <div class="mb-3">
-      <label for="content" class="form-label"> Content </label>
-      <textarea
-        class="form-control"
-        name="content"
-        rows="3"
-        placeholder="This is the body of my blog"
-        required
-      ></textarea>
-    </div>
-    <div class="mb-3">
-      <button
-        type="submit"
-        onclick="return confirm('Save the blog?')"
-        class="btn btn-success"
-      >
-        Submit
-      </button>
-      <button
-        type="reset"
-        onclick="return confirm('Clear erverything?')"
-        class="btn btn-outline-danger"
-      >
-        Clear
-      </button>
-    </div>
-  </form>
-</div>
+  <!-- Create a new blog -->
+  <div class="container my-4 border shadow-sm rounded">
+    <form action="/new" method="POST">
+      <div class="mb-3">
+        <label for="title" class="form-label"> Title </label>
+        <input type="text" class="form-control" name="title" placeholder="My blog title" required />
+      </div>
+      <div class="mb-3">
+        <label for="categories" class="form-label"> Category </label>
+        <input type="text" class="form-control" name="categories" placeholder="Eg: Science" required />
+      </div>
+      <div class="mb-3">
+        <label for="content" class="form-label"> Content </label>
+        <textarea class="form-control" name="content" rows="3" placeholder="This is the body of my blog"
+          required></textarea>
+      </div>
+      <div class="mb-3">
+        <button type="submit" onclick="return confirm('Save the blog?')" class="btn btn-success">
+          Submit
+        </button>
+        <button type="reset" onclick="return confirm('Clear erverything?')" class="btn btn-outline-danger">
+          Clear
+        </button>
+      </div>
+    </form>
+  </div>
 
 <%- include ("partials/footer")%>
